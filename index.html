@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neva</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1 class="title">Neva</h1>
+    <div class="signup-container">
+        <form id="signup-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <p id="password-instructions">Password must be at least 12 characters long and include a number and a special character.</p>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#" id="login-link">Log in</a></p>
+    </div>
+
+    <!-- Updated submission script -->
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent the default form submission behavior
+            const email = document.getElementById('email').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email }), // Send the email to the server
+                });
+
+                if (response.ok) {
+                    alert('Signup successful! Check your email for a welcome message.');
+                } else {
+                    alert('Failed to sign up. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>

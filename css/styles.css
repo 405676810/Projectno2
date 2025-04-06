@@ -1,0 +1,93 @@
+body {
+    background: linear-gradient(to bottom, black 0%, black 50%, #001f3f 75%, #007fff 100%); 
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 9rem;
+    color: #171717;
+    text-shadow: 0 0 14px #00ffff; /* Fluo light blue outline */
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: white;
+    border: 2px solid #007fff; /* Fluo medium blue outline */
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #00bfff; /* Fluo blue for text */
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #00bfff; /* Fluo blue border */
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007fff; /* Fluo medium blue on focus */
+    outline: none;
+}
+
+.instructions {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #00bfff; /* Fluo blue for instructions */
+}
+
+button {
+    background-color: #00bfff; /* Fluo blue background */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007fff; /* Fluo medium blue on hover */
+}
+
+.link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.link a {
+    color: #00bfff; /* Fluo blue for link */
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+}
